@@ -1,0 +1,422 @@
+mark_inactive::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+@keyframes slide-menu-up {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-150%);
+    }
+}
+@keyframes slide-menu-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-150%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@keyframes slide-game-up {
+    0% {
+        opacity: 0;
+        transform: translateY(0%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-127%);
+    }
+}
+@keyframes slide-game-down {
+    0% {
+        opacity: 1;
+        transform: translateY(-127%);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(0%);
+    }
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);;
+    overflow: hidden;
+    position: relative;
+    z-index: -5;
+    background-image: url('../images/square.jpg');
+    background-size: cover; /* Adjust the sizing of the image to fit the element */
+    background-position: center center; /* Center the image in the element */
+    background-attachment: fixed;
+    height: 100vh;
+	font-family: 'Playfair Display', serif;
+    margin-bottom: 2.5rem!important;
+
+}
+h1{
+    font-size: 4.22rem !important;
+	font-family: 'Playfair Display', serif;
+    color: black;
+    -webkit-text-fill-color: white;
+    text-shadow: 3px 3px 2px black;
+    z-index: 1 !important;
+	margin-bottom: 2.5rem!important;
+
+}
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1;
+}
+
+
+#menu {
+    z-index: -1;
+    position: relative;
+    margin-bottom: 60vh;
+    margin-bottom: calc(var(--vh, 1vh) * 60);
+    animation-name: none; 
+    animation-delay: 0.1s;
+    animation-duration: 0.7s;
+    animation-fill-mode: both; 
+    font-family: 'Playfair Display', serif;
+
+}
+#game {
+    z-index: 0;
+    position: relative;
+    opacity: 0;
+    animation-name: none;
+    animation-delay: 0.1s; 
+    animation-duration: 0.7s;
+    animation-fill-mode: both;
+}
+
+
+#AI_butt button{
+    border: 1px solid rgb(5, 16, 48);
+    background-color: rgb(42, 39, 39);
+    color: #f1f1f1;
+    }
+    #AI_butt button:hover{
+        background-color: #fff !important;
+        color: #2D2D2D;
+        transform: translateY(-5px);
+        box-shadow: 0px 5px 12px rgba(106, 50, 50, 0.3);    
+    }
+#difficulty {
+    margin-top: 20px;
+    text-align: center;
+    
+  }
+  
+  .btn-group button {
+    color: #f1f1f1;
+    font-weight: bold;
+    border: 2px solid #2D2D2D;
+    background-color: rgb(173, 11, 40);
+    margin-right: 5px;
+    width: 150px;
+    border-radius: 30px !important;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	font-size: 1rem;
+	transition: all 0.3s ease;
+box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+
+  }
+  
+  .btn-group button.active {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .btn-group button:hover {
+	background-color: #fff !important;
+	color: #2D2D2D;
+	transform: translateY(-3px);
+box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.5);
+  }
+  .difficulty{
+    width: 130px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+
+}
+.difficulty button{
+    border: 1px solid rgb(5, 16, 48) !important;
+    background-color: rgb(42, 39, 39) !important;
+    align-items: center;
+    display: flex;
+	font-family: 'Playfair Display', serif;}
+
+
+
+.diff{
+    font-size: 15.5px;
+	font-family: 'Playfair Display', serif;
+    font-weight: 500;
+}
+.tex {
+    color:  rgb(96, 11, 52);
+    font-weight: bold;
+    font-size: large;
+
+}
+.text-level{
+    font-weight: bold;
+    font-size: large;
+}
+
+#boardbox {
+    position: relative;
+    width: 380px;
+    height: 380px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(103, 122, 246, 0.5);
+        overflow: hidden;
+}
+#board {
+    width: 340px;
+    height: 340px;
+    text-align: center;
+    font-size: 68px;
+	font-family: 'Playfair Display', serif;}
+
+#board tr td {
+    border: 7px inset rgb(96, 11, 52);
+    width: 113px;
+    height: 113px;
+    cursor: pointer;
+}
+#board tr td:first-child{
+    border-left: 0;
+}
+#board tr td:last-child{
+    border-right: 0;
+}
+#board tr:first-child td{
+    border-top: 0;
+}
+#board tr:last-child td{
+    border-bottom: 0;
+}
+
+
+#msg2{
+    color:  rgb(96, 11, 52);
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+#options {
+    width: 348px;
+}
+.nav_butt {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
+	border-radius: 5px;
+	margin: 0 auto;
+	max-width: 500px;
+	background-color: rgba(255, 255, 255, -10);
+}
+.nav_butt button {
+	padding: 3px 8px;
+	z-index: 2;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	margin: 0 10px;
+	transition: background-color 0.3s ease;
+	font-size: 1rem;
+	border-color: #2D2D2D;
+    border-radius: #2D2D2D;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+
+}
+.nav_butt button:hover {
+	background-color: white;
+	color: #2D2D2D;
+	transform: translateY(-3px);
+	box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.5);
+
+}
+#next_match,  #main_menu{
+	display: block;
+	padding: 1px 12px;
+	background-color: #2D2D2D;
+	color: white;
+	font-size: 0.9rem;
+	border: none;
+	border-radius: 20px;
+	cursor: pointer;
+    margin-right: 22px;
+}
+
+
+#scoreboard {
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: bottom 1s;
+    margin-bottom: 0;
+    padding: 2px;
+    padding-bottom: 0px;
+    text-align: center;
+    font-size: 14.2px;
+	font-family: 'Handlee', cursive;
+    box-shadow: 0px 5px 12px black;
+	background-color: rgba(255, 255, 255, 0);
+	color: white;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+#player1, #player2, #draw {
+    width: 90px;
+}
+#player1::after, #player2::after{
+    content: '';
+    display: block;
+    height: 5px;
+    transition: width .3s;
+}
+.mark_inactive::after {
+    width: 0;
+}
+.mark_X_active::after {
+    width: 100%;
+    background: #F83157;
+}
+.mark_O_active::after {
+    width: 100%;
+    background: #00A7E1;
+}
+
+@media only screen and (max-width: 600px) {
+    @keyframes slide-game-up {
+        0% {
+            opacity: 0;
+            transform: translateY(0%);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(-145%);
+        }
+    }
+    @keyframes slide-game-down {
+        0% {
+            opacity: 1;
+            transform: translateY(-145%);
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(0%);
+        }
+    }
+    h1{
+        font-size: 55px;
+    }
+    .diff {
+        font-size: 15px;
+    }
+
+    #boardbox {
+        width: 290px;
+        height: 290px;
+        padding: 20px;
+    }
+    #board {
+        width: 250px;
+        height: 250px;
+    }
+    #board tr td {
+        width: 83px;
+        height: 83px;
+        font-size: 45px;
+    }
+
+    #options {
+        width: 320px;
+        
+    }
+    #next_match{
+        margin-right: 5px;
+        font-size: 14.5px;
+        width: 125px;
+    }
+    #main_menu {
+        margin-left: 5px;
+        font-size: 14.5px;
+        width: 125px;
+    }
+    #player1, #player2, #draw {
+        width: 80px;
+    }
+}
+.x-container{
+	color: #FF5E5B !important;
+	font-weight: 1000;
+	font-size: larger;
+	text-align: center;
+	margin: -33px;
+	padding: 0px;
+	margin-right: 0;
+	margin-left: 0;
+}
+
+.o-container{
+color: #00A7E1 !important;
+font-weight: 1000;
+font-size: larger;
+text-align: center;
+margin: -33px;
+padding: 0px;
+margin-right: 0px;
+margin-left: 0;
+}
+
+
+.btn button{
+    color: #f1f1f1;
+    border: none;
+    border-radius: 30px !important;
+    cursor: pointer;
+    transition: backgroung-colo 0.3s ease;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+
+}
+
+
